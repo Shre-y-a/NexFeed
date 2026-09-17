@@ -1,6 +1,6 @@
-# Newsphere — AI-Powered News Recommender
+# NewsSphere — AI-Powered News Recommender
 
-Newsphere is a modern news reading web app that learns what you like. It serves real-time news across multiple topics and recommends articles tailored specifically to your reading habits over time.
+NewsSphere is a modern news reading web app that learns what you like. It serves real-time news across multiple topics and recommends articles tailored specifically to your reading habits over time.
 
 🔗 **Live Demo**: `https://nexfeed-front.onrender.com`
 

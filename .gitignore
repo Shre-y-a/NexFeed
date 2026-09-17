@@ -1,0 +1,76 @@
+# ── Python ───────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ── Virtual environment ───────────────────────────────────────────────────────
+venv/
+env/
+ENV/
+.venv/
+
+# ── Environment / secrets ─────────────────────────────────────────────────────
+.env
+.env.local
+.env.production
+backend/.env
+
+# ── Database ──────────────────────────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+backend/news_recommender.db
+
+# ── Node / React (client) ─────────────────────────────────────────────────────
+client/node_modules/
+client/dist/
+client/.env
+client/.env.local
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ── IDE / OS ──────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+*.log
+logs/
+
+# ── Flask ─────────────────────────────────────────────────────────────────────
+instance/
+.webassets-cache
+
+# ── Coverage / test ───────────────────────────────────────────────────────────
+.coverage
+htmlcov/
+.pytest_cache/
+
+# ── Temp ──────────────────────────────────────────────────────────────────────
+*.tmp
+*.temp
+*.bak

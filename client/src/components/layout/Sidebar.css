@@ -1,0 +1,195 @@
+/* ── Desktop sidebar (≥ 901px) ───────────────────────────────────────────── */
+.sidebar {
+  width: 168px;
+  min-width: 168px;
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 12px;
+  gap: 0;
+  /* ensure it never overflows on desktop */
+  overflow: hidden;
+}
+
+.sidebar-logo {
+  margin-bottom: 32px;
+  padding: 0 4px;
+  flex-shrink: 0;
+}
+
+.logo-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  background: rgba(79, 110, 247, 0.15);
+  border: 1px solid rgba(79, 110, 247, 0.3);
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 10px;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s, color 0.15s;
+  text-decoration: none;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.nav-item:hover {
+  background: var(--bg-card);
+  color: var(--text-primary);
+}
+
+.nav-item.active {
+  background: rgba(79, 110, 247, 0.12);
+  color: #7a9aff;
+  font-weight: 600;
+}
+
+.sidebar-bottom {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: auto;
+  flex-shrink: 0;
+}
+
+.premium-card {
+  background: linear-gradient(135deg, rgba(79,110,247,0.15), rgba(124,58,237,0.15));
+  border: 1px solid rgba(79,110,247,0.2);
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.premium-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #7a9aff;
+  letter-spacing: 0.8px;
+  margin-bottom: 4px;
+}
+
+.premium-desc {
+  font-size: 11px;
+  color: var(--text-secondary);
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+
+.premium-btn {
+  width: 100%;
+  background: var(--accent-blue);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  padding: 7px 0;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.premium-btn:hover { background: var(--accent-blue-hover); }
+
+.logout-btn { color: var(--text-secondary); }
+.logout-btn:hover { color: #f87171; background: rgba(239, 68, 68, 0.08); }
+
+
+/* ══════════════════════════════════════════════════════════════════════════
+   MOBILE BOTTOM NAV (≤ 900px)
+   The sidebar becomes a fixed bottom navigation bar.
+   app-layout on mobile is a single column: topbar → content → bottom-nav
+══════════════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .sidebar {
+    /* Reset desktop styles */
+    width: 100%;
+    min-width: unset;
+    height: 60px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 0 8px;
+    border-right: none;
+    border-top: 1px solid var(--border);
+    /* Fixed to bottom of screen */
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 200;
+    background: var(--bg-secondary);
+  }
+
+  /* Hide desktop-only elements */
+  .sidebar-logo   { display: none; }
+  .sidebar-bottom { display: none; }
+
+  /* Nav becomes horizontal row */
+  .sidebar-nav {
+    flex-direction: row;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0;
+  }
+
+  /* Each nav item: icon above label */
+  .nav-item {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 3px;
+    padding: 6px 4px;
+    font-size: 10px;
+    font-weight: 500;
+    border-radius: 8px;
+    width: auto;
+    min-width: 52px;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  .nav-item:hover  { background: rgba(79,110,247,0.08); }
+  .nav-item.active { background: rgba(79,110,247,0.12); color: #7a9aff; }
+}
+
+@media (max-width: 480px) {
+  .sidebar { height: 56px; }
+  .nav-item { font-size: 9px; min-width: 44px; gap: 2px; }
+  /* Hide labels on very small screens, keep icons */
+  .nav-item span { display: none; }
+  .nav-item { padding: 8px; }
+}
